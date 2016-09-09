@@ -1,0 +1,6 @@
+PORTS = -p 8080:80
+
+#VOLUMES = -v /home/kindyjd/docker/php/html:/opt/rh/httpd24/root/var/www/html
+
+#ENV = \
+#  -e SOME_KEY=SOME_VALUE
