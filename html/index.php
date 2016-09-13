@@ -4,4 +4,5 @@
 </head>
 <body>
 <a href='info.php'>Get some php info</a>
+Hello World!
 </body>
