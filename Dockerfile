@@ -4,7 +4,7 @@ FROM centos:centos7
 RUN yum -y install centos-release-scl; yum -y update; yum clean all
 
 # install dependencies
-RUN yum -y install httpd24 rh-php56 rh-php56-php rh-php56-mysqlnd rh-php56-mbstring; yum clean all
+RUN yum -y install httpd24 rh-php56 rh-php56-php rh-php56-mysqlnd rh-php56-mbstring rh-php56-php-pecl-memcache; yum clean all
 
 # set apache to run in foreground - environment variable is simpler than using a file
 # Custom runtime options can be set using APACHE_OPTIONS env, which is added to this variable by run-apache script
