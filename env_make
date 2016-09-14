@@ -1,6 +1,8 @@
 PORTS = -p 8080:80
 
-#VOLUMES = -v /home/kindyjd/docker/php/html:/opt/rh/httpd24/root/var/www/html
+#VOLUMES = \
+#  -v /home/kindyjd/github/centos7-scl-simple/html:/opt/rh/httpd24/root/var/www/html:Z
 
 #ENV = \
-#  -e SOME_KEY=SOME_VALUE
+#  -e SOME_KEY=SOME_VALUE \
+#  -e SOME_OTHER_KEY=SOME_OTHER_VALUE

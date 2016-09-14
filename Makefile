@@ -20,10 +20,13 @@ ifeq ($(CONTAINER_RUNNING), 1)
 rm: stop
 endif
 
-.PHONY: build shell run start stop rm ps
+.PHONY: build nocache shell run start stop rm ps
 
 build:
 	docker build -t $(NS)/$(REPO):$(VERSION) .
+
+nocache:
+	docker build --no-cache -t $(NS)/$(REPO):$(VERSION) .
 
 shell:
 	docker exec -it $(NAME)-$(INSTANCE) /bin/bash
