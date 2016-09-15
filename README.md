@@ -15,13 +15,13 @@ Default configuration uses run-apache script to start apache and adds the foregr
 
 ## Some useful commands
 
-To build an image tagged local/php56:
+To build an image tagged gizmonicus/centos7-scl-simple:
 
-        docker build --rm -t local/php56 .
+        docker build --rm -t  .
 
-To run local/php56 using local port 8080 forwarded to container port 80:
+To run gizmonicus/centos7-scl-simple using local port 8080 forwarded to container port 80:
 
-        docker run -d -p 8080:80 local/php56
+        docker run -d -p 8080:80 gizmonicus/centos7-scl-simple
 
 To see what docker containers are running:
 
