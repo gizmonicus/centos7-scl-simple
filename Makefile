@@ -1,10 +1,10 @@
 # from http://www.itnotes.de/docker/development/tools/2014/08/31/speed-up-your-docker-workflow-with-a-makefile/
 include env_make
-NS = local
+NS = gizmonicus
 VERSION ?= latest
 
-REPO = php56
-NAME = php56
+REPO = centos7-scl-simple
+NAME = centos7-scl-simple
 INSTANCE = default
 
 CONTAINER_RUNNING=$(shell docker ps | grep -qw $(NAME)-$(INSTANCE) && echo 1 || echo 0)
