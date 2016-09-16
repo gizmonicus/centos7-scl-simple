@@ -52,4 +52,7 @@ rm:
 ps:
 	docker ps
 
+pull:
+	docker pull $(NS)/$(REPO):$(VERSION)
+
 default: build
