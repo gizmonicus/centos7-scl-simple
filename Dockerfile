@@ -31,14 +31,18 @@ ENV OPTIONS "-D FOREGROUND"
 
 # Install composer
 ADD http://getcomposer.org/installer /tmp/installer
-RUN /opt/rh/rh-php56/root/usr/bin/php /tmp/installer --install-dir=/usr/local/bin
+RUN /opt/rh/rh-php56/root/usr/bin/php /tmp/installer --install-dir=/usr/local/bin && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
 
 # Set up php env when logging in via shell
-RUN echo "source /opt/rh/rh-php56/enable" >> /root/.bashrc
+RUN echo -e "source /opt/rh/rh-php56/enable\nsource /opt/rh/httpd24/enable" >> /root/.bashrc
 
 # Simple startup script to avoid some issues observed with container restart 
 ADD run-apache /run-apache
 RUN chmod -v +x /run-apache
+
+# Allow all .htaccess directives
+ADD ./www_directory.conf /opt/rh/httpd24/root/etc/httpd/conf.d/www_directory.conf
+RUN chown apache:apache /opt/rh/httpd24/root/etc/httpd/conf.d/www_directory.conf && chmod 644 /opt/rh/httpd24/root/etc/httpd/conf.d/www_directory.conf
 
 # Update code, can be overridden with a volume at runtime if needed for development
 ADD html/ /opt/rh/httpd24/root/var/www/html/
