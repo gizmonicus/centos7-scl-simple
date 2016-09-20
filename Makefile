@@ -33,7 +33,7 @@ shell:
 
 run:
 	@if [ $(CONTAINER_EXISTS) -eq 0 ]; then \
-		echo docker run -d --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO):$(VERSION); \
+		echo docker run --network=host -d --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO):$(VERSION); \
 		docker run -d --name $(NAME)-$(INSTANCE) $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO):$(VERSION); \
 	else \
 		echo docker start $(NAME)-$(INSTANCE) ; \
