@@ -13,6 +13,7 @@ RUN yum -y install \
     rh-php56-php-bcmath \
     rh-php56-php-gd \
     rh-php56-php-intl \
+    rh-php56-php-ldap \
     rh-php56-php-mbstring \
     rh-php56-php-odbc \
     rh-php56-php-opcache \
